@@ -1,0 +1,10 @@
+{
+  "appId": "com.finanzapro.panelgastos",
+  "appName": "FinanzaPro",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "ios": {
+    "contentInset": "automatic",
+    "backgroundColor": "#0f172a"
+  }
+}

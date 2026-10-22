@@ -1,0 +1,19 @@
+{
+  "name": "finanzapro-gastos",
+  "version": "1.0.0",
+  "description": "Panel de Control de Gastos para Web (PWA) e iOS App Store (Capacitor)",
+  "main": "www/index.html",
+  "scripts": {
+    "start": "npx serve www",
+    "ios:init": "npx cap add ios",
+    "ios:sync": "npx cap sync ios",
+    "ios:open": "npx cap open ios"
+  },
+  "dependencies": {
+    "@capacitor/core": "^6.0.0",
+    "@capacitor/ios": "^6.0.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.0.0"
+  }
+}
