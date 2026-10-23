@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="es" class="h-full">
+<html lang="es" class="h-full dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="FinanzaPro">
-  <title>FinanzaPro — Panel de Control de Gastos (Web & iOS App Store)</title>
+  <link id="appleTouchIconLink" rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0BAMAAADP4xsBAAAAGFBMVEUA5nYAxWUApFQAg0MAYzMAQiIAIREAAABnYrD1AAADIElEQVR42u3YPW/bMBAGYFJOOlNA7axqirirgQ5eXSCBVweooTVuBs/+kv5+W8uS2Fp3JO/OQAuclkx5TPBekkea+mafUVpppZVWWmmllVZaaaWV/gfo5/X5e16/nP9+X//xvTDojUG/CZ0+uhz7MsaEzFDZfaHTG4vSI3oZjwYf9JJOz/BB39HD9wOXTUmmT3g63Ji+ZALTYbdkup+OwZ9wE/JCD0zH0GqJpRd58mqJpPeWNugwHZoONyfTi8CgR+T9OjQdg0s8iq4C0zG8xKPob4FB5yWVPoSmY0I+G9962g2dWsASj6FX3lQ/Xn+fpvQTfea6YU+Em4Wio8HlTKSrfq+DFx2NPnlVLGVpP3tbWdpb5Zlwz7eJ2YVo9Kqn74Vprxl7EKZd+JQi0lXUtkyiebFGaS/WVvjCsWPFGqXfWLFG6QUr1ijNizVK82KN0ZVlxRqjjzbQ9tPpfksF2n463cXafWwW59eBb0ui21i7rPn/2UAjMqKNuo21XYI9GlpehC4uJZzD97sxca6bWLunZqsyic0kRjdbalvCIrWZxOhzrLsS2vj7Ypg+xxopYWjQCP071vZSQpN09QrSvzoFN0UecIJblkFi7e7gEkYcPAZpgLESRrSuMI2WMOZIM3Cs2xI6z3YJOzhIH8ZtCY1Nuy+GR92X0F7bMS2PiXi/GZDvay79el4r16O2JZd+t2lPQvE0+IyabZl098hydWzFdSUm/ATnPv991nJP9NfuQE+/1+F0v5HaWpb2nn4zYXplU9Z0Eu01wB+E6YLXWyN0lbLnp9EnZm+N0N69jhpriN7xrowYzbzXYfQiZ8caor1YT4Rp7173IEtLxBqgj7znCozes17hUHqX82MN0CuBWAM087kCowuBWAM087kCof0tdS5Li8R6mN4L7NYAvcvZnQJE97G2S2G621LdtBamC9bDEEa3W6ob1dL0JdYu24rTl06BU0KIbmJt5rU8vfEehoTpVf8wJE3P+CWE6CLyzplOV93DkDh9tKz1jdEHM65vRO9G9a3oTXkzWupTWmmllVZaaaWVVlpppZX+H+mf/bZuNrAfP6MAAAAASUVORK5CYII=">
+  <link id="faviconLink" rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0BAMAAADP4xsBAAAAGFBMVEUA5nYAxWUApFQAg0MAYzMAQiIAIREAAABnYrD1AAADIElEQVR42u3YPW/bMBAGYFJOOlNA7axqirirgQ5eXSCBVweooTVuBs/+kv5+W8uS2Fp3JO/OQAuclkx5TPBekkea+mafUVpppZVWWmmllVZaaaWV/gfo5/X5e16/nP9+X//xvTDojUG/CZ0+uhz7MsaEzFDZfaHTG4vSI3oZjwYf9JJOz/BB39HD9wOXTUmmT3g63Ji+ZALTYbdkup+OwZ9wE/JCD0zH0GqJpRd58mqJpPeWNugwHZoONyfTi8CgR+T9OjQdg0s8iq4C0zG8xKPob4FB5yWVPoSmY0I+G9962g2dWsASj6FX3lQ/Xn+fpvQTfea6YU+Em4Wio8HlTKSrfq+DFx2NPnlVLGVpP3tbWdpb5Zlwz7eJ2YVo9Kqn74Vprxl7EKZd+JQi0lXUtkyiebFGaS/WVvjCsWPFGqXfWLFG6QUr1ijNizVK82KN0ZVlxRqjjzbQ9tPpfksF2n463cXafWwW59eBb0ui21i7rPn/2UAjMqKNuo21XYI9GlpehC4uJZzD97sxca6bWLunZqsyic0kRjdbalvCIrWZxOhzrLsS2vj7Ypg+xxopYWjQCP071vZSQpN09QrSvzoFN0UecIJblkFi7e7gEkYcPAZpgLESRrSuMI2WMOZIM3Cs2xI6z3YJOzhIH8ZtCY1Nuy+GR92X0F7bMS2PiXi/GZDvay79el4r16O2JZd+t2lPQvE0+IyabZl098hydWzFdSUm/ATnPv991nJP9NfuQE+/1+F0v5HaWpb2nn4zYXplU9Z0Eu01wB+E6YLXWyN0lbLnp9EnZm+N0N69jhpriN7xrowYzbzXYfQiZ8caor1YT4Rp7173IEtLxBqgj7znCozes17hUHqX82MN0CuBWAM087kCowuBWAM087kCof0tdS5Li8R6mN4L7NYAvcvZnQJE97G2S2G621LdtBamC9bDEEa3W6ob1dL0JdYu24rTl06BU0KIbmJt5rU8vfEehoTpVf8wJE3P+CWE6CLyzplOV93DkDh9tKz1jdEHM65vRO9G9a3oTXkzWupTWmmllVZaaaWVVlpppZX+H+mf/bZuNrAfP6MAAAAASUVORK5CYII=">
+  <link rel="manifest" href="manifest.json">
+  <title>FinanzaPro — Control de Gastos Minimalista</title>
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,6 +20,13 @@
       darkMode: 'class',
       theme: {
         extend: {
+          colors: {
+            brand: {
+              DEFAULT: '#00E676',
+              hover: '#00C853',
+              muted: 'rgba(0, 230, 118, 0.12)'
+            }
+          },
           fontFamily: {
             sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
           }
@@ -32,96 +42,107 @@
     .ios-frame-wrapper {
       max-width: 412px;
       margin: 1.5rem auto;
-      border: 12px solid #1e293b;
-      border-radius: 48px;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+      border: 10px solid #18181b;
+      border-radius: 44px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.55);
       overflow: hidden;
       position: relative;
-      background: #f8fafc;
+      background: #fafafa;
     }
     .dark .ios-frame-wrapper {
-      border-color: #334155;
-      background: #0f172a;
+      border-color: #27272a;
+      background: #09090b;
     }
     .custom-scrollbar::-webkit-scrollbar {
-      width: 6px;
-      height: 6px;
+      width: 5px;
+      height: 5px;
     }
     .custom-scrollbar::-webkit-scrollbar-thumb {
-      background: rgba(148, 163, 184, 0.4);
+      background: rgba(113, 113, 122, 0.35);
       border-radius: 9999px;
     }
   </style>
 </head>
-<body class="min-h-full bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-200">
+<body class="min-h-full bg-zinc-50 text-zinc-900 dark:bg-[#09090b] dark:text-zinc-100 transition-colors duration-200">
 
-  <!-- Top Platform & Settings Bar -->
-  <header class="sticky top-0 z-30 bg-white/90 dark:bg-slate-900/90 backdrop-blur border-b border-slate-200 dark:border-slate-800">
+  <!-- Barra Superior Minimalista -->
+  <header class="sticky top-0 z-30 bg-white/90 dark:bg-[#09090b]/90 backdrop-blur border-b border-zinc-200 dark:border-zinc-800/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-3">
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-2xl bg-indigo-600 flex items-center justify-center text-white font-bold shadow-sm shadow-indigo-500/30">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-          </svg>
-        </div>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0BAMAAADP4xsBAAAAGFBMVEUA5nYAxWUApFQAg0MAYzMAQiIAIREAAABnYrD1AAADIElEQVR42u3YPW/bMBAGYFJOOlNA7axqirirgQ5eXSCBVweooTVuBs/+kv5+W8uS2Fp3JO/OQAuclkx5TPBekkea+mafUVpppZVWWmmllVZaaaWV/gfo5/X5e16/nP9+X//xvTDojUG/CZ0+uhz7MsaEzFDZfaHTG4vSI3oZjwYf9JJOz/BB39HD9wOXTUmmT3g63Ji+ZALTYbdkup+OwZ9wE/JCD0zH0GqJpRd58mqJpPeWNugwHZoONyfTi8CgR+T9OjQdg0s8iq4C0zG8xKPob4FB5yWVPoSmY0I+G9962g2dWsASj6FX3lQ/Xn+fpvQTfea6YU+Em4Wio8HlTKSrfq+DFx2NPnlVLGVpP3tbWdpb5Zlwz7eJ2YVo9Kqn74Vprxl7EKZd+JQi0lXUtkyiebFGaS/WVvjCsWPFGqXfWLFG6QUr1ijNizVK82KN0ZVlxRqjjzbQ9tPpfksF2n463cXafWwW59eBb0ui21i7rPn/2UAjMqKNuo21XYI9GlpehC4uJZzD97sxca6bWLunZqsyic0kRjdbalvCIrWZxOhzrLsS2vj7Ypg+xxopYWjQCP071vZSQpN09QrSvzoFN0UecIJblkFi7e7gEkYcPAZpgLESRrSuMI2WMOZIM3Cs2xI6z3YJOzhIH8ZtCY1Nuy+GR92X0F7bMS2PiXi/GZDvay79el4r16O2JZd+t2lPQvE0+IyabZl098hydWzFdSUm/ATnPv991nJP9NfuQE+/1+F0v5HaWpb2nn4zYXplU9Z0Eu01wB+E6YLXWyN0lbLnp9EnZm+N0N69jhpriN7xrowYzbzXYfQiZ8caor1YT4Rp7173IEtLxBqgj7znCozes17hUHqX82MN0CuBWAM087kCowuBWAM087kCof0tdS5Li8R6mN4L7NYAvcvZnQJE97G2S2G621LdtBamC9bDEEa3W6ob1dL0JdYu24rTl06BU0KIbmJt5rU8vfEehoTpVf8wJE3P+CWE6CLyzplOV93DkDh9tKz1jdEHM65vRO9G9a3oTXkzWupTWmmllVZaaaWVVlpppZX+H+mf/bZuNrAfP6MAAAAASUVORK5CYII=" alt="Logo FinanzaPro" class="w-9 h-9 rounded-xl object-cover border border-[#00E676]/40 max-w-full h-auto">
         <div>
           <div class="flex items-center gap-2">
-            <h1 class="font-bold text-base sm:text-lg tracking-tight">FinanzaPro</h1>
-            <span class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 dark:bg-indigo-950/80 dark:text-indigo-300 border border-indigo-200/60 dark:border-indigo-800/60">Web + iOS App</span>
+            <h1 class="font-bold text-base tracking-tight">FinanzaPro</h1>
+            <span class="text-[10px] font-semibold px-2 py-0.5 rounded-md bg-[#00E676]/10 text-[#00ad58] dark:text-[#00E676] border border-[#00E676]/25">Web & iOS</span>
           </div>
-          <p class="text-xs text-slate-500 dark:text-slate-400 hidden sm:block">Panel de control de gastos multiplataforma</p>
+          <p class="text-[11px] text-zinc-500 dark:text-zinc-400 hidden sm:block">Control minimalista de finanzas</p>
         </div>
       </div>
 
-      <!-- Controls: View Mode, Month, Currency, Theme, Add Expense -->
+      <!-- Controles -->
       <div class="flex flex-wrap items-center gap-2">
-        <!-- Platform Simulator Switch -->
-        <div class="inline-flex rounded-xl bg-slate-100 dark:bg-slate-800 p-1 border border-slate-200/70 dark:border-slate-700">
-          <button id="btnModeWeb" type="button" onclick="setPlatformMode('web')" class="px-2.5 py-1 rounded-lg text-xs font-semibold transition-all bg-white dark:bg-slate-900 text-indigo-600 dark:text-indigo-400 shadow-sm">
-            💻 Vista Web
+        <!-- Selector de Vista Web / iPhone -->
+        <div class="inline-flex rounded-xl bg-zinc-100 dark:bg-zinc-900 p-1 border border-zinc-200 dark:border-zinc-800">
+          <button id="btnModeWeb" type="button" onclick="setPlatformMode('web')" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold transition-all bg-white dark:bg-zinc-800 text-zinc-900 dark:text-[#00E676] shadow-sm">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            <span>Vista Web</span>
           </button>
-          <button id="btnModeIos" type="button" onclick="setPlatformMode('ios')" class="px-2.5 py-1 rounded-lg text-xs font-semibold transition-all text-slate-600 dark:text-slate-400 hover:text-slate-900">
-            📱 Vista iPhone
+          <button id="btnModeIos" type="button" onclick="setPlatformMode('ios')" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold transition-all text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            <span>Vista iPhone</span>
           </button>
         </div>
 
-        <!-- Month Filter -->
-        <select id="monthSelect" onchange="handleMonthChange(this.value)" aria-label="Filtrar por mes" class="text-xs font-medium rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-2.5 py-1.5 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+        <!-- Filtro de Mes -->
+        <select id="monthSelect" onchange="handleMonthChange(this.value)" aria-label="Filtrar por mes" class="text-xs font-medium rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 px-2.5 py-1.5 focus:outline-none focus:ring-1 focus:ring-[#00E676]">
           <option value="2026-10">Octubre 2026</option>
           <option value="2026-09">Septiembre 2026</option>
           <option value="2026-08">Agosto 2026</option>
           <option value="all">Todos los meses</option>
         </select>
 
-        <!-- Currency Selector -->
-        <select id="currencySelect" onchange="handleCurrencyChange(this.value)" aria-label="Seleccionar moneda" class="text-xs font-semibold rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-2.5 py-1.5 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+        <!-- Selector de Moneda -->
+        <select id="currencySelect" onchange="handleCurrencyChange(this.value)" aria-label="Seleccionar moneda" class="text-xs font-semibold rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 px-2.5 py-1.5 focus:outline-none focus:ring-1 focus:ring-[#00E676]">
           <option value="PEN">S/ (PEN)</option>
           <option value="USD">$ (USD)</option>
           <option value="EUR">€ (EUR)</option>
         </select>
 
-        <!-- Theme Toggle -->
-        <button id="btnThemeToggle" type="button" onclick="toggleDarkMode()" aria-label="Cambiar tema claro u oscuro" class="p-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition">
-          <span id="themeIcon">🌙</span>
+        <!-- Alternar Tema Claro / Oscuro -->
+        <button id="btnThemeToggle" type="button" onclick="toggleDarkMode()" aria-label="Cambiar tema claro u oscuro" class="p-2 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-zinc-600 dark:text-zinc-300 hover:border-[#00E676]/50 transition">
+          <span id="themeIcon" class="block w-4 h-4"></span>
         </button>
 
-        <!-- Quick New Transaction -->
-        <button id="btnHeaderAdd" type="button" onclick="openTransactionModal()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-700 text-white shadow-sm shadow-indigo-500/20 transition">
+        <!-- Botón Tutorial -->
+        <button id="btnOpenTutorial" type="button" onclick="openTutorialModal()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-zinc-700 dark:text-zinc-200 hover:border-[#00E676]/50 transition">
+          <svg class="w-3.5 h-3.5 text-[#00ad58] dark:text-[#00E676]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <span>Tutorial</span>
+        </button>
+
+        <!-- Edición Rápida de Ingreso -->
+        <button id="btnHeaderEditIncome" type="button" onclick="openQuickIncomeEdit()" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-zinc-700 dark:text-zinc-200 hover:border-[#00E676]/50 transition">
+          <svg class="w-3.5 h-3.5 text-[#00ad58] dark:text-[#00E676]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          <span>Editar Ingreso</span>
+        </button>
+
+        <!-- Nuevo Movimiento -->
+        <button id="btnHeaderAdd" type="button" onclick="openTransactionModal()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold bg-[#00E676] hover:bg-[#00C853] text-black shadow-sm transition">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           <span>+ Registrar</span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Main Viewport Container (switches between full Web and iPhone App Frame) -->
+  <!-- Contenedor Principal -->
   <div id="appViewport" class="max-w-7xl mx-auto px-4 sm:px-6 py-5 transition-all duration-300">
 
-    <!-- iOS Status Bar & Dynamic Island (Visible only in iPhone mode) -->
-    <div id="iosStatusBar" class="hidden bg-white dark:bg-slate-900 px-6 pt-3 pb-2 border-b border-slate-100 dark:border-slate-800 select-none">
-      <div class="flex items-center justify-between text-[11px] font-semibold text-slate-800 dark:text-slate-200">
+    <!-- Barra de Estado iOS & Dynamic Island -->
+    <div id="iosStatusBar" class="hidden bg-white dark:bg-[#09090b] px-6 pt-3 pb-2 border-b border-zinc-100 dark:border-zinc-800/80 select-none">
+      <div class="flex items-center justify-between text-[11px] font-semibold text-zinc-800 dark:text-zinc-200">
         <span>9:41</span>
-        <div class="w-24 h-5 bg-black rounded-full mx-auto flex items-center justify-end px-2">
-          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+        <div class="w-24 h-5 bg-black rounded-full mx-auto flex items-center justify-end px-2 border border-zinc-800">
+          <span class="w-2 h-2 rounded-full bg-[#00E676]"></span>
         </div>
         <div class="flex items-center gap-1">
           <span>5G</span>
@@ -130,134 +151,175 @@
       </div>
     </div>
 
-    <!-- Desktop/Tablet Navigation Tabs (Hidden when in iOS mode) -->
-    <nav id="webNavTabs" class="flex items-center gap-1.5 overflow-x-auto pb-3 mb-5 border-b border-slate-200 dark:border-slate-800">
-      <button id="navWebDashboard" type="button" onclick="switchTab('dashboard')" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center gap-2 bg-indigo-600 text-white shadow-sm">
-        <span>📊</span><span>Panel General</span>
+    <!-- Pestañas de Navegación Web -->
+    <nav id="webNavTabs" class="flex items-center gap-1.5 overflow-x-auto pb-3 mb-5 border-b border-zinc-200 dark:border-zinc-800/80">
+      <button id="navWebDashboard" type="button" onclick="switchTab('dashboard')" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center gap-2 bg-[#00E676] text-black shadow-sm">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+        <span>Panel General</span>
       </button>
-      <button id="navWebTransactions" type="button" onclick="switchTab('transactions')" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:bg-slate-200/60 dark:hover:bg-slate-800">
-        <span>🧾</span><span>Movimientos</span>
-        <span id="badgeTxCount" class="text-[11px] px-1.5 py-0.2 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200">0</span>
+      <button id="navWebTransactions" type="button" onclick="switchTab('transactions')" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center gap-2 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200/60 dark:hover:bg-zinc-900">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+        <span>Movimientos</span>
+        <span id="badgeTxCount" class="text-[11px] px-1.5 py-0.2 rounded-full bg-zinc-200 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">0</span>
       </button>
-      <button id="navWebBudgets" type="button" onclick="switchTab('budgets')" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:bg-slate-200/60 dark:hover:bg-slate-800">
-        <span>🎯</span><span>Presupuestos</span>
+      <button id="navWebBudgets" type="button" onclick="switchTab('budgets')" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center gap-2 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200/60 dark:hover:bg-zinc-900">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+        <span>Presupuestos</span>
       </button>
-      <button id="navWebAppstore" type="button" onclick="switchTab('appstore')" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:bg-slate-200/60 dark:hover:bg-slate-800">
-        <span>🚀</span><span>Web & App Store</span>
+      <button id="navWebAppstore" type="button" onclick="switchTab('appstore')" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center gap-2 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200/60 dark:hover:bg-zinc-900">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        <span>Web & App Store</span>
       </button>
     </nav>
 
-    <!-- Scrollable Content Area -->
-    <main id="mainScrollArea" class="space-y-6">
+    <!-- Área Principal -->
+    <main id="mainScrollArea" class="space-y-5">
 
-      <!-- ==================== TAB 1: DASHBOARD ==================== -->
-      <section id="tabDashboard" class="space-y-6">
-        <!-- KPI Cards Grid -->
+      <!-- ==================== PESTAÑA 1: DASHBOARD ==================== -->
+      <section id="tabDashboard" class="space-y-5">
+        <!-- Tarjetas KPI -->
         <div id="kpiGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <!-- Balance Total -->
-          <div class="p-4 rounded-2xl bg-gradient-to-br from-indigo-600 to-violet-700 text-white shadow-md">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-medium text-indigo-100">Balance Disponible</span>
-              <span class="text-xs px-2 py-0.5 rounded-full bg-white/15 font-medium" id="kpiPeriodLabel">Oct 2026</span>
+          <!-- Balance Disponible -->
+          <div class="p-4 rounded-2xl bg-[#09090b] text-white border border-[#00E676]/30 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-medium text-zinc-400">Balance Disponible</span>
+                <span class="text-[11px] px-2 py-0.5 rounded-md bg-[#00E676]/15 text-[#00E676] font-semibold" id="kpiPeriodLabel">Oct 2026</span>
+              </div>
+              <p id="kpiBalance" class="text-2xl font-bold mt-2 tracking-tight text-[#00E676]">S/ 0.00</p>
             </div>
-            <p id="kpiBalance" class="text-2xl font-bold mt-2 tracking-tight">S/ 0.00</p>
-            <p id="kpiSavingsRate" class="text-xs text-indigo-100 mt-2">Tasa de ahorro: 0%</p>
+            <p id="kpiSavingsRate" class="text-xs text-zinc-400 mt-3 pt-2.5 border-t border-zinc-800/80">Tasa de ahorro: 0%</p>
           </div>
 
           <!-- Ingresos -->
-          <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-medium text-slate-500 dark:text-slate-400">Ingresos del Periodo</span>
-              <span class="w-7 h-7 rounded-lg bg-emerald-50 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-sm font-bold">↑</span>
+          <div class="p-4 rounded-2xl bg-white dark:bg-zinc-900/90 border border-zinc-200/80 dark:border-zinc-800/80 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-medium text-zinc-500 dark:text-zinc-400">Ingresos</span>
+                <span class="w-7 h-7 rounded-lg bg-[#00E676]/10 text-[#00ad58] dark:text-[#00E676] flex items-center justify-center">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                </span>
+              </div>
+              <p id="kpiIncome" class="text-2xl font-bold mt-2 text-zinc-900 dark:text-zinc-100">S/ 0.00</p>
+              <p id="kpiIncomeCount" class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">0 ingresos registrados</p>
             </div>
-            <p id="kpiIncome" class="text-2xl font-bold mt-2 text-emerald-600 dark:text-emerald-400">S/ 0.00</p>
-            <p id="kpiIncomeCount" class="text-xs text-slate-500 dark:text-slate-400 mt-2">0 depósitos registrados</p>
+            <div class="mt-3 pt-2.5 border-t border-zinc-100 dark:border-zinc-800/80 flex items-center gap-2">
+              <button id="btnEditMainIncome" type="button" onclick="openQuickIncomeEdit()" class="flex-1 py-1.5 px-2.5 rounded-lg text-[11px] font-semibold bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-200 hover:border-[#00E676]/40 border border-transparent transition inline-flex items-center justify-center gap-1">
+                <svg class="w-3 h-3 text-[#00ad58] dark:text-[#00E676]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                <span>Editar Sueldo</span>
+              </button>
+              <button id="btnAddIncomeKpi" type="button" onclick="openTransactionModal('income')" class="py-1.5 px-2.5 rounded-lg text-[11px] font-semibold bg-[#00E676]/15 text-[#00ad58] dark:text-[#00E676] hover:bg-[#00E676]/25 transition">
+                + Ingreso
+              </button>
+            </div>
           </div>
 
           <!-- Gastos -->
-          <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-medium text-slate-500 dark:text-slate-400">Gastos del Periodo</span>
-              <span class="w-7 h-7 rounded-lg bg-rose-50 dark:bg-rose-950/80 text-rose-600 dark:text-rose-400 flex items-center justify-center text-sm font-bold">↓</span>
+          <div class="p-4 rounded-2xl bg-white dark:bg-zinc-900/90 border border-zinc-200/80 dark:border-zinc-800/80 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-medium text-zinc-500 dark:text-zinc-400">Gastos</span>
+                <span class="w-7 h-7 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 flex items-center justify-center">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="17" y1="7" x2="7" y2="17"/><polyline points="17 17 7 17 7 7"/></svg>
+                </span>
+              </div>
+              <p id="kpiExpense" class="text-2xl font-bold mt-2 text-zinc-900 dark:text-zinc-100">S/ 0.00</p>
+              <p id="kpiExpenseCount" class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">0 gastos registrados</p>
             </div>
-            <p id="kpiExpense" class="text-2xl font-bold mt-2 text-rose-600 dark:text-rose-400">S/ 0.00</p>
-            <p id="kpiExpenseCount" class="text-xs text-slate-500 dark:text-slate-400 mt-2">0 gastos registrados</p>
+            <div class="mt-3 pt-2.5 border-t border-zinc-100 dark:border-zinc-800/80 flex items-center gap-2">
+              <button id="btnAddExpenseKpi" type="button" onclick="openTransactionModal('expense')" class="flex-1 py-1.5 px-2.5 rounded-lg text-[11px] font-semibold bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-200 hover:border-[#00E676]/40 border border-transparent transition">
+                + Nuevo Gasto
+              </button>
+              <button id="btnManageExpensesKpi" type="button" onclick="switchTab('transactions')" class="py-1.5 px-2.5 rounded-lg text-[11px] font-semibold text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition">
+                Editar lista
+              </button>
+            </div>
           </div>
 
           <!-- Presupuesto Mensual -->
-          <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-medium text-slate-500 dark:text-slate-400">Tope Presupuestal</span>
-              <span id="kpiBudgetBadge" class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300">En rango</span>
+          <div class="p-4 rounded-2xl bg-white dark:bg-zinc-900/90 border border-zinc-200/80 dark:border-zinc-800/80 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-medium text-zinc-500 dark:text-zinc-400">Presupuesto Mensual</span>
+                <span id="kpiBudgetBadge" class="text-[10px] font-semibold px-2 py-0.5 rounded-md bg-[#00E676]/15 text-[#00ad58] dark:text-[#00E676]">Saludable</span>
+              </div>
+              <p id="kpiBudgetPercent" class="text-2xl font-bold mt-2">0%</p>
+              <div class="w-full h-1.5 rounded-full bg-zinc-100 dark:bg-zinc-800 mt-2 overflow-hidden">
+                <div id="kpiBudgetBar" class="h-full bg-[#00E676] transition-all duration-300" style="width: 0%"></div>
+              </div>
+              <p id="kpiBudgetDetail" class="text-[11px] text-zinc-500 dark:text-zinc-400 mt-1.5">S/ 0 de S/ 0 límite</p>
             </div>
-            <p id="kpiBudgetPercent" class="text-2xl font-bold mt-2">0%</p>
-            <div class="w-full h-2 rounded-full bg-slate-100 dark:bg-slate-800 mt-2 overflow-hidden">
-              <div id="kpiBudgetBar" class="h-full bg-indigo-600 transition-all duration-300" style="width: 0%"></div>
+            <div class="mt-3 pt-2.5 border-t border-zinc-100 dark:border-zinc-800/80 flex items-center gap-2">
+              <button id="btnEditTotalBudgetKpi" type="button" onclick="openTotalBudgetModal()" class="flex-1 py-1.5 px-2.5 rounded-lg text-[11px] font-semibold bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-200 hover:border-[#00E676]/40 border border-transparent transition inline-flex items-center justify-center gap-1">
+                <svg class="w-3 h-3 text-[#00ad58] dark:text-[#00E676]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                <span>Editar Presupuesto Total</span>
+              </button>
             </div>
-            <p id="kpiBudgetDetail" class="text-[11px] text-slate-500 dark:text-slate-400 mt-1.5">S/ 0 de S/ 0 límite</p>
           </div>
         </div>
 
-        <!-- Charts Grid -->
-        <div id="chartsGrid" class="grid grid-cols-1 lg:grid-cols-2 gap-5">
-          <!-- Chart 1: Gastos por Categoría -->
-          <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm">
+        <!-- Gráficos -->
+        <div id="chartsGrid" class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <div class="p-5 rounded-2xl bg-white dark:bg-zinc-900/90 border border-zinc-200/80 dark:border-zinc-800/80">
             <div class="flex items-center justify-between mb-3">
               <div>
-                <h2 class="text-sm font-bold">Distribución de Gastos por Categoría</h2>
-                <p class="text-xs text-slate-500 dark:text-slate-400">Proporción del gasto en el periodo seleccionado</p>
+                <h2 class="text-sm font-bold">Gastos por Categoría</h2>
+                <p class="text-xs text-zinc-500 dark:text-zinc-400">Distribución del periodo actual</p>
               </div>
-              <button id="btnGoBudgets" type="button" onclick="switchTab('budgets')" class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">
+              <button id="btnGoBudgets" type="button" onclick="switchTab('budgets')" class="text-xs font-semibold text-[#00ad58] dark:text-[#00E676] hover:underline">
                 Ver topes →
               </button>
             </div>
-            <div class="relative h-64">
+            <div class="relative h-60">
               <canvas id="categoryChart"></canvas>
             </div>
           </div>
 
-          <!-- Chart 2: Ingresos vs Gastos y Presupuesto por Categoría -->
-          <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm">
+          <div class="p-5 rounded-2xl bg-white dark:bg-zinc-900/90 border border-zinc-200/80 dark:border-zinc-800/80">
             <div class="flex items-center justify-between mb-3">
               <div>
-                <h2 class="text-sm font-bold">Gasto Real vs. Presupuesto Asignado</h2>
-                <p class="text-xs text-slate-500 dark:text-slate-400">Comparativa por categoría principal</p>
+                <h2 class="text-sm font-bold">Gasto Real vs. Tope Mensual</h2>
+                <p class="text-xs text-zinc-500 dark:text-zinc-400">Comparativa por categoría</p>
               </div>
-              <span class="text-[11px] text-slate-400 font-medium">Actualizado en vivo</span>
+              <span class="text-[11px] text-zinc-400 font-medium">En vivo</span>
             </div>
-            <div class="relative h-64">
+            <div class="relative h-60">
               <canvas id="comparisonChart"></canvas>
             </div>
           </div>
         </div>
 
-        <!-- Recent Activity & Top Categories -->
-        <div id="bottomDashboardGrid" class="grid grid-cols-1 lg:grid-cols-3 gap-5">
-          <!-- Últimos Movimientos -->
-          <div class="lg:col-span-2 p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm">
+        <!-- Actividad Reciente y Medios de Pago -->
+        <div id="bottomDashboardGrid" class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+          <div class="lg:col-span-2 p-5 rounded-2xl bg-white dark:bg-zinc-900/90 border border-zinc-200/80 dark:border-zinc-800/80">
             <div class="flex items-center justify-between mb-4">
               <div>
                 <h2 class="text-sm font-bold">Movimientos Recientes</h2>
-                <p class="text-xs text-slate-500 dark:text-slate-400">Últimos registros de ingresos y salidas</p>
+                <p class="text-xs text-zinc-500 dark:text-zinc-400">Últimos ingresos y salidas</p>
               </div>
-              <button id="btnSeeAllTx" type="button" onclick="switchTab('transactions')" class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">
-                Ver todos →
-              </button>
+              <div class="flex items-center gap-2">
+                <button id="btnClearAllDashboard" type="button" onclick="clearAllTransactions()" class="inline-flex items-center gap-1 text-[11px] font-semibold px-2.5 py-1 rounded-lg border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-rose-500 hover:border-rose-500/40 transition">
+                  <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                  <span>Borrar ejemplos</span>
+                </button>
+                <button id="btnSeeAllTx" type="button" onclick="switchTab('transactions')" class="text-xs font-semibold text-[#00ad58] dark:text-[#00E676] hover:underline">
+                  Ver todos →
+                </button>
+              </div>
             </div>
-            <div id="recentTransactionsList" class="divide-y divide-slate-100 dark:divide-slate-800"></div>
+            <div id="recentTransactionsList" class="divide-y divide-zinc-100 dark:divide-zinc-800/80"></div>
           </div>
 
-          <!-- Resumen por Método de Pago -->
-          <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+          <div class="p-5 rounded-2xl bg-white dark:bg-zinc-900/90 border border-zinc-200/80 dark:border-zinc-800/80 flex flex-col justify-between">
             <div>
-              <h2 class="text-sm font-bold mb-1">Gastos por Medio de Pago</h2>
-              <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Desglose de billeteras y tarjetas</p>
+              <h2 class="text-sm font-bold mb-1">Medios de Pago</h2>
+              <p class="text-xs text-zinc-500 dark:text-zinc-400 mb-4">Billeteras y tarjetas utilizadas</p>
               <div id="paymentMethodsBreakdown" class="space-y-3"></div>
             </div>
 
-            <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
-              <span class="text-xs text-slate-500 dark:text-slate-400">¿Nuevo gasto rápido?</span>
-              <button id="btnQuickExpenseCard" type="button" onclick="openTransactionModal('expense')" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-900 dark:bg-indigo-600 text-white hover:opacity-90 transition">
+            <div class="mt-6 pt-4 border-t border-zinc-100 dark:border-zinc-800/80 flex items-center justify-between">
+              <span class="text-xs text-zinc-500 dark:text-zinc-400">¿Nuevo movimiento?</span>
+              <button id="btnQuickExpenseCard" type="button" onclick="openTransactionModal('expense')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-[#00E676] text-black hover:bg-[#00C853] transition">
                 + Añadir Gasto
               </button>
             </div>
@@ -265,124 +327,130 @@
         </div>
       </section>
 
-      <!-- ==================== TAB 2: MOVIMIENTOS ==================== -->
-      <section id="tabTransactions" class="hidden space-y-5">
-        <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm space-y-4">
+      <!-- ==================== PESTAÑA 2: MOVIMIENTOS ==================== -->
+      <section id="tabTransactions" class="hidden space-y-4">
+        <div class="p-5 rounded-2xl bg-white dark:bg-zinc-900/90 border border-zinc-200/80 dark:border-zinc-800/80 space-y-4">
           <div class="flex flex-wrap items-center justify-between gap-3">
             <div>
               <h2 class="text-base font-bold">Historial de Movimientos</h2>
-              <p class="text-xs text-slate-500 dark:text-slate-400">Busca, filtra, edita o exporta tus ingresos y gastos</p>
+              <p class="text-xs text-zinc-500 dark:text-zinc-400">Filtra, edita o exporta tus registros</p>
             </div>
             <div class="flex flex-wrap items-center gap-2">
-              <button id="btnExportCsv" type="button" onclick="exportToCSV()" class="px-3 py-1.5 rounded-xl text-xs font-semibold border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-                📥 Exportar CSV
+              <button id="btnExportCsv" type="button" onclick="exportToCSV()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold border border-zinc-200 dark:border-zinc-800 hover:border-[#00E676]/50 transition">
+                <svg class="w-3.5 h-3.5 text-[#00ad58] dark:text-[#00E676]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                <span>Exportar CSV</span>
               </button>
-              <button id="btnResetDemo" type="button" onclick="openResetModal()" class="px-3 py-1.5 rounded-xl text-xs font-semibold border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-                🔄 Restaurar Demo
+              <button id="btnResetDemo" type="button" onclick="openResetModal()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:border-zinc-700 transition">
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+                <span>Restaurar Demo</span>
               </button>
-              <button id="btnAddTxTab" type="button" onclick="openTransactionModal()" class="px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-700 text-white transition">
+              <button id="btnAddTxTab" type="button" onclick="openTransactionModal()" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-[#00E676] hover:bg-[#00C853] text-black transition">
                 + Nuevo Movimiento
               </button>
             </div>
           </div>
 
-          <!-- Search & Filter Bar -->
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <div class="relative">
-              <input id="searchInput" type="text" oninput="handleFilterChange()" placeholder="Buscar por concepto o método..." class="w-full pl-9 pr-3 py-2 text-xs rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-              <span class="absolute left-3 top-2.5 text-slate-400 text-xs">🔍</span>
+              <input id="searchInput" type="text" oninput="handleFilterChange()" placeholder="Buscar concepto o método..." class="w-full pl-9 pr-3 py-2 text-xs rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 focus:outline-none focus:ring-1 focus:ring-[#00E676]">
+              <span class="absolute left-3 top-2.5 text-zinc-400">
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              </span>
             </div>
 
-            <select id="typeFilter" onchange="handleFilterChange()" aria-label="Filtrar por tipo de movimiento" class="text-xs rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-              <option value="all">Todos los tipos (Ingresos y Gastos)</option>
+            <select id="typeFilter" onchange="handleFilterChange()" aria-label="Filtrar por tipo de movimiento" class="text-xs rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-[#00E676]">
+              <option value="all">Todos los tipos</option>
               <option value="expense">Solo Gastos</option>
               <option value="income">Solo Ingresos</option>
             </select>
 
-            <select id="categoryFilter" onchange="handleFilterChange()" aria-label="Filtrar por categoría" class="text-xs rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            <select id="categoryFilter" onchange="handleFilterChange()" aria-label="Filtrar por categoría" class="text-xs rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-[#00E676]">
               <option value="all">Todas las categorías</option>
-              <option value="Alimentación">🍔 Alimentación</option>
-              <option value="Vivienda">🏠 Vivienda</option>
-              <option value="Transporte">🚗 Transporte</option>
-              <option value="Servicios">💡 Servicios</option>
-              <option value="Salud">⚕️ Salud</option>
-              <option value="Entretenimiento">🎬 Entretenimiento</option>
-              <option value="Ingresos">💼 Ingresos / Salario</option>
-              <option value="Otros">📦 Otros</option>
+              <option value="Alimentación">Alimentación</option>
+              <option value="Vivienda">Vivienda</option>
+              <option value="Transporte">Transporte</option>
+              <option value="Servicios">Servicios</option>
+              <option value="Salud">Salud</option>
+              <option value="Entretenimiento">Entretenimiento</option>
+              <option value="Ingresos">Ingresos / Salario</option>
+              <option value="Otros">Otros</option>
             </select>
           </div>
 
-          <!-- Transactions List -->
-          <div id="fullTransactionsList" class="divide-y divide-slate-100 dark:divide-slate-800"></div>
+          <div id="fullTransactionsList" class="divide-y divide-zinc-100 dark:divide-zinc-800/80"></div>
         </div>
       </section>
 
-      <!-- ==================== TAB 3: PRESUPUESTOS ==================== -->
-      <section id="tabBudgets" class="hidden space-y-5">
-        <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm">
+      <!-- ==================== PESTAÑA 3: PRESUPUESTOS ==================== -->
+      <section id="tabBudgets" class="hidden space-y-4">
+        <div class="p-5 rounded-2xl bg-white dark:bg-zinc-900/90 border border-zinc-200/80 dark:border-zinc-800/80">
           <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
             <div>
-              <h2 class="text-base font-bold">Límites de Presupuesto Mensual por Categoría</h2>
-              <p class="text-xs text-slate-500 dark:text-slate-400">Haz clic en "Editar Tope" en cualquier categoría para ajustar tu meta mensual</p>
+              <h2 class="text-base font-bold">Presupuesto Mensual por Categoría</h2>
+              <p class="text-xs text-zinc-500 dark:text-zinc-400">Personaliza tu tope general o el límite de cada rubro</p>
             </div>
-            <span id="totalBudgetSummary" class="text-xs font-semibold px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
-              Presupuesto Total: S/ 0.00
-            </span>
+            <div class="flex flex-wrap items-center gap-2">
+              <span id="totalBudgetSummary" class="text-xs font-semibold px-3 py-1.5 rounded-xl bg-[#00E676]/10 text-[#00ad58] dark:text-[#00E676] border border-[#00E676]/25">
+                Presupuesto Total: S/ 0.00
+              </span>
+              <button id="btnEditTotalBudgetTab" type="button" onclick="openTotalBudgetModal()" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-[#00E676] hover:bg-[#00C853] text-black transition">
+                Editar Presupuesto Total
+              </button>
+            </div>
           </div>
 
           <div id="budgetsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
         </div>
       </section>
 
-      <!-- ==================== TAB 4: WEB & APP STORE ==================== -->
-      <section id="tabAppstore" class="hidden space-y-5">
-        <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm space-y-5">
+      <!-- ==================== PESTAÑA 4: WEB & APP STORE ==================== -->
+      <section id="tabAppstore" class="hidden space-y-4">
+        <div class="p-5 rounded-2xl bg-white dark:bg-zinc-900/90 border border-zinc-200/80 dark:border-zinc-800/80 space-y-5">
           <div class="flex flex-wrap items-start justify-between gap-4">
             <div>
-              <span class="text-[11px] font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">Arquitectura Híbrida Lista para Producción</span>
-              <h2 class="text-lg font-bold mt-0.5">Publicación en Web (PWA) y Apple App Store (iOS)</h2>
-              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 max-w-2xl">
-                Esta aplicación está construida con diseño adaptativo iOS Safe-Area, almacenamiento persistente offline y configuración lista para <strong>Capacitor iOS</strong>, lo que permite subir el mismo código a un servidor web y compilarlo en Xcode para el App Store.
+              <span class="text-[11px] font-bold uppercase tracking-wider text-[#00ad58] dark:text-[#00E676]">Web App & iOS Nativo</span>
+              <h2 class="text-lg font-bold mt-0.5">Instalación en iPhone y Respaldo de Datos</h2>
+              <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 max-w-2xl">
+                Diseñada con soporte nativo para pantalla de inicio de iOS, almacenamiento local offline y empaquetado mediante <strong>Capacitor iOS</strong>.
               </p>
             </div>
             <div class="flex items-center gap-2">
-              <button id="btnExportJson" type="button" onclick="exportToJSON()" class="px-3.5 py-2 rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-700 text-white transition">
-                💾 Descargar Respaldo JSON
+              <button id="btnExportJson" type="button" onclick="exportToJSON()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold bg-[#00E676] hover:bg-[#00C853] text-black transition">
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                <span>Descargar Respaldo JSON</span>
               </button>
             </div>
           </div>
 
-          <!-- Architecture Cards -->
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/70 dark:border-slate-700">
-              <div class="text-base font-bold mb-1">1. Web & PWA Instantánea</div>
-              <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                Funciona en cualquier navegador de escritorio o móvil. Incluye <code class="px-1 py-0.5 rounded bg-slate-200 dark:bg-slate-700">manifest.json</code> y Service Worker para instalarla en pantalla de inicio sin pasar por tiendas.
+            <div class="p-4 rounded-xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200/70 dark:border-zinc-800">
+              <div class="text-sm font-bold mb-1 text-zinc-900 dark:text-zinc-100">1. Instalación en iPhone</div>
+              <p class="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                Abre tu enlace en Safari, toca <strong>Compartir</strong> y elige <strong>Agregar a inicio</strong> para fijar el ícono negro con la <strong>F</strong> verde eléctrico.
               </p>
             </div>
-            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/70 dark:border-slate-700">
-              <div class="text-base font-bold mb-1">2. Contenedor Nativo iOS</div>
-              <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                Mediante <strong>Ionic Capacitor</strong> (<code class="px-1 py-0.5 rounded bg-slate-200 dark:bg-slate-700">capacitor.config.json</code> incluido en el paquete ZIP), se genera el proyecto nativo <code class="px-1 py-0.5 rounded bg-slate-200 dark:bg-slate-700">ios/App.xcworkspace</code> para Xcode.
+            <div class="p-4 rounded-xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200/70 dark:border-zinc-800">
+              <div class="text-sm font-bold mb-1 text-zinc-900 dark:text-zinc-100">2. Contenedor Capacitor iOS</div>
+              <p class="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                Compatible con Xcode (<code class="px-1 py-0.5 rounded bg-zinc-200 dark:bg-zinc-800">ios/App.xcworkspace</code>) para publicar en App Store Connect.
               </p>
             </div>
-            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/70 dark:border-slate-700">
-              <div class="text-base font-bold mb-1">3. Requisitos App Store</div>
-              <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                Cumple con las guías de diseño de Apple (Human Interface Guidelines): navegación inferior por pestañas, áreas seguras para Dynamic Island, modo oscuro nativo y funcionamiento 100% offline.
+            <div class="p-4 rounded-xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200/70 dark:border-zinc-800">
+              <div class="text-sm font-bold mb-1 text-zinc-900 dark:text-zinc-100">3. Privacidad 100% Local</div>
+              <p class="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                Tus ingresos, gastos y topes se guardan directamente en tu dispositivo sin depender de servidores externos.
               </p>
             </div>
           </div>
 
-          <!-- Terminal Commands with Copy Buttons -->
-          <div class="p-4 rounded-2xl bg-slate-900 text-slate-100 space-y-3">
+          <div class="p-4 rounded-2xl bg-[#09090b] border border-zinc-800 text-zinc-100 space-y-3">
             <div class="flex items-center justify-between">
-              <span class="text-xs font-semibold text-slate-300">Comandos para compilar en Mac / Xcode hacia App Store Connect</span>
-              <button id="btnCopyCommands" type="button" onclick="copyBuildCommands()" class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white transition">
-                📋 Copiar comandos
+              <span class="text-xs font-semibold text-zinc-400">Comandos para compilar en Xcode</span>
+              <button id="btnCopyCommands" type="button" onclick="copyBuildCommands()" class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-zinc-800 hover:bg-zinc-700 text-[#00E676] transition">
+                Copiar comandos
               </button>
             </div>
-            <pre id="buildCommandsCode" class="text-xs font-mono text-emerald-300 overflow-x-auto leading-relaxed">npm install
+            <pre id="buildCommandsCode" class="text-xs font-mono text-[#00E676] overflow-x-auto leading-relaxed">npm install
 npx cap add ios
 npx cap sync ios
 npx cap open ios</pre>
@@ -392,108 +460,107 @@ npx cap open ios</pre>
 
     </main>
 
-    <!-- iOS Bottom Tab Bar (Visible when in iOS mode or small mobile screen) -->
-    <nav id="iosBottomNav" class="hidden sticky bottom-0 z-20 bg-white/95 dark:bg-slate-900/95 backdrop-blur border-t border-slate-200 dark:border-slate-800 px-2 pt-1.5 pb-4">
+    <!-- Barra Inferior iOS -->
+    <nav id="iosBottomNav" class="hidden sticky bottom-0 z-20 bg-white/95 dark:bg-[#09090b]/95 backdrop-blur border-t border-zinc-200 dark:border-zinc-800 px-2 pt-1.5 pb-4">
       <div class="grid grid-cols-5 items-center text-center">
-        <button id="navIosDashboard" type="button" onclick="switchTab('dashboard')" class="flex flex-col items-center py-1 text-indigo-600 dark:text-indigo-400">
-          <span class="text-base">📊</span>
-          <span class="text-[10px] font-semibold mt-0.5">Resumen</span>
+        <button id="navIosDashboard" type="button" onclick="switchTab('dashboard')" class="flex flex-col items-center py-1 text-[#00ad58] dark:text-[#00E676]">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+          <span class="text-[10px] font-semibold mt-1">Resumen</span>
         </button>
-        <button id="navIosTransactions" type="button" onclick="switchTab('transactions')" class="flex flex-col items-center py-1 text-slate-500 dark:text-slate-400">
-          <span class="text-base">🧾</span>
-          <span class="text-[10px] font-semibold mt-0.5">Movimientos</span>
+        <button id="navIosTransactions" type="button" onclick="switchTab('transactions')" class="flex flex-col items-center py-1 text-zinc-500 dark:text-zinc-400">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+          <span class="text-[10px] font-semibold mt-1">Lista</span>
         </button>
         <div class="flex justify-center">
-          <button id="btnIosCenterAdd" type="button" onclick="openTransactionModal()" aria-label="Registrar movimiento" class="w-11 h-11 rounded-full bg-indigo-600 text-white shadow-lg shadow-indigo-500/40 flex items-center justify-center text-xl font-bold -mt-3">
+          <button id="btnIosCenterAdd" type="button" onclick="openTransactionModal()" aria-label="Registrar movimiento" class="w-11 h-11 rounded-full bg-[#00E676] text-black shadow-lg flex items-center justify-center text-xl font-bold -mt-3">
             +
           </button>
         </div>
-        <button id="navIosBudgets" type="button" onclick="switchTab('budgets')" class="flex flex-col items-center py-1 text-slate-500 dark:text-slate-400">
-          <span class="text-base">🎯</span>
-          <span class="text-[10px] font-semibold mt-0.5">Topes</span>
+        <button id="navIosBudgets" type="button" onclick="switchTab('budgets')" class="flex flex-col items-center py-1 text-zinc-500 dark:text-zinc-400">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          <span class="text-[10px] font-semibold mt-1">Topes</span>
         </button>
-        <button id="navIosAppstore" type="button" onclick="switchTab('appstore')" class="flex flex-col items-center py-1 text-slate-500 dark:text-slate-400">
-          <span class="text-base">🚀</span>
-          <span class="text-[10px] font-semibold mt-0.5">App Store</span>
+        <button id="navIosAppstore" type="button" onclick="switchTab('appstore')" class="flex flex-col items-center py-1 text-zinc-500 dark:text-zinc-400">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          <span class="text-[10px] font-semibold mt-1">iOS</span>
         </button>
       </div>
     </nav>
 
   </div>
 
-  <!-- ==================== MODAL: CREATE / EDIT TRANSACTION ==================== -->
-  <div id="transactionModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/60 backdrop-blur-sm p-4">
-    <div class="w-full max-w-md rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden">
-      <div class="px-6 py-4 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+  <!-- ==================== MODAL: CREAR / EDITAR MOVIMIENTO ==================== -->
+  <div id="transactionModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur-sm p-4">
+    <div class="w-full max-w-md rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-2xl overflow-hidden">
+      <div class="px-6 py-4 border-b border-zinc-100 dark:border-zinc-800 flex items-center justify-between">
         <h3 id="modalTitle" class="text-base font-bold">Nuevo Movimiento</h3>
-        <button id="btnCloseTxModal" type="button" onclick="closeTransactionModal()" class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 flex items-center justify-center hover:bg-slate-200">✕</button>
+        <button id="btnCloseTxModal" type="button" onclick="closeTransactionModal()" class="w-8 h-8 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-500 flex items-center justify-center hover:text-zinc-900 dark:hover:text-white">✕</button>
       </div>
 
       <form id="transactionForm" onsubmit="saveTransaction(event)" class="p-6 space-y-4">
         <input type="hidden" id="txId" value="">
 
-        <!-- Tipo: Gasto vs Ingreso -->
-        <div class="grid grid-cols-2 gap-2 p-1 rounded-xl bg-slate-100 dark:bg-slate-800">
-          <button id="btnTypeExpense" type="button" onclick="setFormType('expense')" class="py-2 rounded-lg text-xs font-bold transition bg-rose-600 text-white shadow-sm">
+        <div class="grid grid-cols-2 gap-2 p-1 rounded-xl bg-zinc-100 dark:bg-zinc-950 border border-zinc-200/60 dark:border-zinc-800">
+          <button id="btnTypeExpense" type="button" onclick="setFormType('expense')" class="py-2 rounded-lg text-xs font-bold transition bg-zinc-900 dark:bg-zinc-800 text-white shadow-sm">
             ↓ Gasto
           </button>
-          <button id="btnTypeIncome" type="button" onclick="setFormType('income')" class="py-2 rounded-lg text-xs font-bold transition text-slate-600 dark:text-slate-300">
+          <button id="btnTypeIncome" type="button" onclick="setFormType('income')" class="py-2 rounded-lg text-xs font-bold transition text-zinc-500 dark:text-zinc-400">
             ↑ Ingreso
           </button>
         </div>
 
         <div>
-          <label for="txTitle" class="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1">Concepto / Descripción</label>
-          <input id="txTitle" type="text" required placeholder="Ej. Supermercado Wong, Alquiler, Recibo de Luz..." class="w-full px-3.5 py-2 text-xs rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+          <label for="txTitle" class="block text-xs font-semibold text-zinc-600 dark:text-zinc-300 mb-1">Concepto / Descripción</label>
+          <input id="txTitle" type="text" required placeholder="Ej. Supermercado, Alquiler, Luz..." class="w-full px-3.5 py-2 text-xs rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 focus:outline-none focus:ring-1 focus:ring-[#00E676]">
         </div>
 
         <div class="grid grid-cols-2 gap-3">
           <div>
-            <label for="txAmount" class="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1">Monto</label>
-            <input id="txAmount" type="number" step="0.01" min="0.01" required placeholder="0.00" class="w-full px-3.5 py-2 text-xs rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            <label for="txAmount" class="block text-xs font-semibold text-zinc-600 dark:text-zinc-300 mb-1">Monto</label>
+            <input id="txAmount" type="number" step="0.01" min="0.01" required placeholder="0.00" class="w-full px-3.5 py-2 text-xs rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 focus:outline-none focus:ring-1 focus:ring-[#00E676]">
           </div>
           <div>
-            <label for="txDate" class="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1">Fecha</label>
-            <input id="txDate" type="date" required class="w-full px-3.5 py-2 text-xs rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            <label for="txDate" class="block text-xs font-semibold text-zinc-600 dark:text-zinc-300 mb-1">Fecha</label>
+            <input id="txDate" type="date" required class="w-full px-3.5 py-2 text-xs rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 focus:outline-none focus:ring-1 focus:ring-[#00E676]">
           </div>
         </div>
 
         <div class="grid grid-cols-2 gap-3">
           <div>
-            <label for="txCategory" class="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1">Categoría</label>
-            <select id="txCategory" class="w-full px-3 py-2 text-xs rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-              <option value="Alimentación">🍔 Alimentación</option>
-              <option value="Vivienda">🏠 Vivienda</option>
-              <option value="Transporte">🚗 Transporte</option>
-              <option value="Servicios">💡 Servicios</option>
-              <option value="Salud">⚕️ Salud</option>
-              <option value="Entretenimiento">🎬 Entretenimiento</option>
-              <option value="Ingresos">💼 Ingresos / Salario</option>
-              <option value="Otros">📦 Otros</option>
+            <label for="txCategory" class="block text-xs font-semibold text-zinc-600 dark:text-zinc-300 mb-1">Categoría</label>
+            <select id="txCategory" class="w-full px-3 py-2 text-xs rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 focus:outline-none focus:ring-1 focus:ring-[#00E676]">
+              <option value="Alimentación">Alimentación</option>
+              <option value="Vivienda">Vivienda</option>
+              <option value="Transporte">Transporte</option>
+              <option value="Servicios">Servicios</option>
+              <option value="Salud">Salud</option>
+              <option value="Entretenimiento">Entretenimiento</option>
+              <option value="Ingresos">Ingresos / Salario</option>
+              <option value="Otros">Otros</option>
             </select>
           </div>
           <div>
-            <label for="txMethod" class="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1">Método de Pago</label>
-            <select id="txMethod" class="w-full px-3 py-2 text-xs rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-              <option value="Yape / Plin">📱 Yape / Plin</option>
-              <option value="Tarjeta de Crédito">💳 Tarjeta de Crédito</option>
-              <option value="Tarjeta de Débito">🏦 Tarjeta de Débito</option>
-              <option value="Transferencia">🔁 Transferencia</option>
-              <option value="Efectivo">💵 Efectivo</option>
+            <label for="txMethod" class="block text-xs font-semibold text-zinc-600 dark:text-zinc-300 mb-1">Método de Pago</label>
+            <select id="txMethod" class="w-full px-3 py-2 text-xs rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 focus:outline-none focus:ring-1 focus:ring-[#00E676]">
+              <option value="Yape / Plin">Yape / Plin</option>
+              <option value="Tarjeta de Crédito">Tarjeta de Crédito</option>
+              <option value="Tarjeta de Débito">Tarjeta de Débito</option>
+              <option value="Transferencia">Transferencia</option>
+              <option value="Efectivo">Efectivo</option>
             </select>
           </div>
         </div>
 
-        <label class="flex items-center gap-2 text-xs text-slate-600 dark:text-slate-300 cursor-pointer select-none pt-1">
-          <input id="txRecurring" type="checkbox" class="rounded border-slate-300 text-indigo-600 focus:ring-indigo-500">
-          <span>Marcar como movimiento fijo / recurrente mensual</span>
+        <label class="flex items-center gap-2 text-xs text-zinc-600 dark:text-zinc-300 cursor-pointer select-none pt-1">
+          <input id="txRecurring" type="checkbox" class="rounded border-zinc-400 accent-[#00E676]">
+          <span>Movimiento fijo / recurrente mensual</span>
         </label>
 
         <div class="pt-2 flex items-center justify-end gap-2">
-          <button id="btnCancelTx" type="button" onclick="closeTransactionModal()" class="px-4 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+          <button id="btnCancelTx" type="button" onclick="closeTransactionModal()" class="px-4 py-2 rounded-xl text-xs font-semibold text-zinc-600 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800">
             Cancelar
           </button>
-          <button id="btnSubmitTx" type="submit" class="px-5 py-2 rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-700 text-white shadow-sm">
+          <button id="btnSubmitTx" type="submit" class="px-5 py-2 rounded-xl text-xs font-bold bg-[#00E676] hover:bg-[#00C853] text-black shadow-sm">
             Guardar Movimiento
           </button>
         </div>
@@ -501,24 +568,24 @@ npx cap open ios</pre>
     </div>
   </div>
 
-  <!-- ==================== MODAL: EDIT BUDGET LIMIT ==================== -->
-  <div id="budgetModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/60 backdrop-blur-sm p-4">
-    <div class="w-full max-w-sm rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden">
-      <div class="px-6 py-4 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+  <!-- ==================== MODAL: EDITAR TOPE DE CATEGORÍA ==================== -->
+  <div id="budgetModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur-sm p-4">
+    <div class="w-full max-w-sm rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-2xl overflow-hidden">
+      <div class="px-6 py-4 border-b border-zinc-100 dark:border-zinc-800 flex items-center justify-between">
         <h3 id="budgetModalTitle" class="text-base font-bold">Editar Tope Mensual</h3>
-        <button id="btnCloseBudgetModal" type="button" onclick="closeBudgetModal()" class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 flex items-center justify-center">✕</button>
+        <button id="btnCloseBudgetModal" type="button" onclick="closeBudgetModal()" class="w-8 h-8 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-500 flex items-center justify-center">✕</button>
       </div>
       <form id="budgetForm" onsubmit="saveBudgetLimit(event)" class="p-6 space-y-4">
         <input type="hidden" id="budgetCategoryInput" value="">
         <div>
-          <label for="budgetLimitInput" class="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1">Nuevo límite mensual</label>
-          <input id="budgetLimitInput" type="number" step="10" min="10" required class="w-full px-3.5 py-2 text-sm font-semibold rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+          <label for="budgetLimitInput" class="block text-xs font-semibold text-zinc-600 dark:text-zinc-300 mb-1">Nuevo límite mensual</label>
+          <input id="budgetLimitInput" type="number" step="10" min="10" required class="w-full px-3.5 py-2 text-sm font-semibold rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 focus:outline-none focus:ring-1 focus:ring-[#00E676]">
         </div>
         <div class="flex justify-end gap-2">
-          <button id="btnCancelBudget" type="button" onclick="closeBudgetModal()" class="px-4 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+          <button id="btnCancelBudget" type="button" onclick="closeBudgetModal()" class="px-4 py-2 rounded-xl text-xs font-semibold text-zinc-600 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800">
             Cancelar
           </button>
-          <button id="btnSaveBudget" type="submit" class="px-4 py-2 rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-700 text-white">
+          <button id="btnSaveBudget" type="submit" class="px-4 py-2 rounded-xl text-xs font-bold bg-[#00E676] hover:bg-[#00C853] text-black">
             Actualizar Tope
           </button>
         </div>
@@ -526,34 +593,108 @@ npx cap open ios</pre>
     </div>
   </div>
 
-  <!-- ==================== MODAL: CONFIRM RESET ==================== -->
-  <div id="resetModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/60 backdrop-blur-sm p-4">
-    <div class="w-full max-w-sm rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xl p-6 space-y-4">
+  <!-- ==================== MODAL: CONFIRMAR RESTAURACIÓN ==================== -->
+  <div id="resetModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur-sm p-4">
+    <div class="w-full max-w-sm rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-2xl p-6 space-y-4">
       <h3 class="text-base font-bold">¿Restaurar datos de ejemplo?</h3>
-      <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+      <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">
         Se restablecerán los movimientos y presupuestos iniciales de demostración.
       </p>
       <div class="flex justify-end gap-2 pt-2">
-        <button id="btnCancelReset" type="button" onclick="closeResetModal()" class="px-4 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+        <button id="btnCancelReset" type="button" onclick="closeResetModal()" class="px-4 py-2 rounded-xl text-xs font-semibold text-zinc-600 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800">
           Cancelar
         </button>
-        <button id="btnConfirmReset" type="button" onclick="confirmResetDemo()" class="px-4 py-2 rounded-xl text-xs font-semibold bg-rose-600 hover:bg-rose-700 text-white">
+        <button id="btnConfirmReset" type="button" onclick="confirmResetDemo()" class="px-4 py-2 rounded-xl text-xs font-bold bg-[#00E676] hover:bg-[#00C853] text-black">
           Sí, restaurar
         </button>
       </div>
     </div>
   </div>
 
-  <!-- Toast Notification -->
+  <!-- ==================== MODAL: EDITAR PRESUPUESTO MENSUAL TOTAL ==================== -->
+  <div id="totalBudgetModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur-sm p-4">
+    <div class="w-full max-w-sm rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-2xl overflow-hidden">
+      <div class="px-6 py-4 border-b border-zinc-100 dark:border-zinc-800 flex items-center justify-between">
+        <h3 class="text-base font-bold">Presupuesto Mensual Total</h3>
+        <button id="btnCloseTotalBudgetModal" type="button" onclick="closeTotalBudgetModal()" class="w-8 h-8 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-500 flex items-center justify-center">✕</button>
+      </div>
+      <form id="totalBudgetForm" onsubmit="saveTotalBudget(event)" class="p-6 space-y-4">
+        <div>
+          <label for="totalBudgetInput" class="block text-xs font-semibold text-zinc-600 dark:text-zinc-300 mb-1">Monto total mensual</label>
+          <input id="totalBudgetInput" type="number" step="10" min="10" required placeholder="Ej. 3000" class="w-full px-3.5 py-2.5 text-sm font-bold rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 focus:outline-none focus:ring-1 focus:ring-[#00E676]">
+          <p class="text-[11px] text-zinc-500 dark:text-zinc-400 mt-1.5 leading-relaxed">
+            El tope general se actualizará al instante y las categorías se ajustarán proporcionalmente.
+          </p>
+        </div>
+        <div class="flex justify-end gap-2">
+          <button id="btnCancelTotalBudget" type="button" onclick="closeTotalBudgetModal()" class="px-4 py-2 rounded-xl text-xs font-semibold text-zinc-600 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800">
+            Cancelar
+          </button>
+          <button id="btnSaveTotalBudget" type="submit" class="px-4 py-2 rounded-xl text-xs font-bold bg-[#00E676] hover:bg-[#00C853] text-black shadow-sm">
+            Guardar Presupuesto Total
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL: TUTORIAL INTERACTIVO ==================== -->
+  <div id="tutorialModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur-sm p-4">
+    <div class="w-full max-w-lg rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-2xl overflow-hidden">
+      <div class="px-6 py-4 border-b border-zinc-100 dark:border-zinc-800 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0BAMAAADP4xsBAAAAGFBMVEUA5nYAxWUApFQAg0MAYzMAQiIAIREAAABnYrD1AAADIElEQVR42u3YPW/bMBAGYFJOOlNA7axqirirgQ5eXSCBVweooTVuBs/+kv5+W8uS2Fp3JO/OQAuclkx5TPBekkea+mafUVpppZVWWmmllVZaaaWV/gfo5/X5e16/nP9+X//xvTDojUG/CZ0+uhz7MsaEzFDZfaHTG4vSI3oZjwYf9JJOz/BB39HD9wOXTUmmT3g63Ji+ZALTYbdkup+OwZ9wE/JCD0zH0GqJpRd58mqJpPeWNugwHZoONyfTi8CgR+T9OjQdg0s8iq4C0zG8xKPob4FB5yWVPoSmY0I+G9962g2dWsASj6FX3lQ/Xn+fpvQTfea6YU+Em4Wio8HlTKSrfq+DFx2NPnlVLGVpP3tbWdpb5Zlwz7eJ2YVo9Kqn74Vprxl7EKZd+JQi0lXUtkyiebFGaS/WVvjCsWPFGqXfWLFG6QUr1ijNizVK82KN0ZVlxRqjjzbQ9tPpfksF2n463cXafWwW59eBb0ui21i7rPn/2UAjMqKNuo21XYI9GlpehC4uJZzD97sxca6bWLunZqsyic0kRjdbalvCIrWZxOhzrLsS2vj7Ypg+xxopYWjQCP071vZSQpN09QrSvzoFN0UecIJblkFi7e7gEkYcPAZpgLESRrSuMI2WMOZIM3Cs2xI6z3YJOzhIH8ZtCY1Nuy+GR92X0F7bMS2PiXi/GZDvay79el4r16O2JZd+t2lPQvE0+IyabZl098hydWzFdSUm/ATnPv991nJP9NfuQE+/1+F0v5HaWpb2nn4zYXplU9Z0Eu01wB+E6YLXWyN0lbLnp9EnZm+N0N69jhpriN7xrowYzbzXYfQiZ8caor1YT4Rp7173IEtLxBqgj7znCozes17hUHqX82MN0CuBWAM087kCowuBWAM087kCof0tdS5Li8R6mN4L7NYAvcvZnQJE97G2S2G621LdtBamC9bDEEa3W6ob1dL0JdYu24rTl06BU0KIbmJt5rU8vfEehoTpVf8wJE3P+CWE6CLyzplOV93DkDh9tKz1jdEHM65vRO9G9a3oTXkzWupTWmmllVZaaaWVVlpppZX+H+mf/bZuNrAfP6MAAAAASUVORK5CYII=" alt="Logo FinanzaPro" class="w-9 h-9 rounded-xl object-cover border border-[#00E676]/40 max-w-full h-auto">
+          <div>
+            <h3 class="text-base font-bold">Guía Rápida de FinanzaPro</h3>
+            <p class="text-[11px] text-zinc-500 dark:text-zinc-400">Cómo configurar tu app en Web e iPhone</p>
+          </div>
+        </div>
+        <button id="btnCloseTutorialModal" type="button" onclick="closeTutorialModal()" class="w-8 h-8 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-500 flex items-center justify-center">✕</button>
+      </div>
+      <div class="p-6 space-y-3 max-h-[70vh] overflow-y-auto custom-scrollbar text-xs">
+        <div class="p-3.5 rounded-xl bg-zinc-50 dark:bg-zinc-950 border border-[#00E676]/30 space-y-1">
+          <p class="font-bold text-[#00ad58] dark:text-[#00E676]">1. Fijar el ícono en tu iPhone</p>
+          <p class="text-zinc-600 dark:text-zinc-300 leading-relaxed">
+            Borra el acceso anterior en tu iPhone, abre tu enlace en <strong>Safari</strong>, toca <strong>Compartir</strong> y selecciona <strong>Agregar a inicio</strong> para ver el logo negro con la <strong>F</strong> verde eléctrico.
+          </p>
+        </div>
+        <div class="p-3.5 rounded-xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 space-y-1">
+          <p class="font-bold text-zinc-900 dark:text-zinc-100">2. Cambiar el Presupuesto Total (de 4,880 al tuyo)</p>
+          <p class="text-zinc-600 dark:text-zinc-300 leading-relaxed">
+            En la tarjeta <strong>Presupuesto Mensual</strong> o en la pestaña <strong>Presupuestos</strong>, pulsa <strong>Editar Presupuesto Total</strong>, ingresa tu meta mensual y guarda.
+          </p>
+        </div>
+        <div class="p-3.5 rounded-xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 space-y-1">
+          <p class="font-bold text-zinc-900 dark:text-zinc-100">3. Editar tu sueldo o limpiar ejemplos</p>
+          <p class="text-zinc-600 dark:text-zinc-300 leading-relaxed">
+            Usa <strong>Borrar ejemplos</strong> en <em>Movimientos Recientes</em> para empezar desde cero, o toca <strong>Editar Sueldo</strong> en la tarjeta de <em>Ingresos</em>.
+          </p>
+        </div>
+        <div class="p-3.5 rounded-xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 space-y-1">
+          <p class="font-bold text-zinc-900 dark:text-zinc-100">4. Registrar gastos y exportar a CSV</p>
+          <p class="text-zinc-600 dark:text-zinc-300 leading-relaxed">
+            Pulsa <strong>+ Registrar</strong> para anotar cualquier gasto o ingreso. Todo se guarda en tu dispositivo y puedes descargarlo con <strong>Exportar CSV</strong>.
+          </p>
+        </div>
+      </div>
+      <div class="px-6 py-3.5 border-t border-zinc-100 dark:border-zinc-800 flex justify-end">
+        <button id="btnGotItTutorial" type="button" onclick="closeTutorialModal()" class="px-5 py-2 rounded-xl text-xs font-bold bg-[#00E676] hover:bg-[#00C853] text-black">
+          ¡Entendido!
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notificación Toast -->
   <div id="toastContainer" class="fixed bottom-5 right-5 z-50 pointer-events-none transition-all duration-300 opacity-0 translate-y-2">
-    <div id="toastMessage" class="px-4 py-2.5 rounded-2xl bg-slate-900 dark:bg-indigo-600 text-white text-xs font-semibold shadow-lg">
+    <div id="toastMessage" class="px-4 py-2.5 rounded-xl bg-zinc-900 dark:bg-[#00E676] text-white dark:text-black text-xs font-bold shadow-lg border border-[#00E676]/30">
       Acción completada
     </div>
   </div>
 
   <script>
     // =========================================================================
-    // CONFIGURACIÓN E INICIALIZACIÓN DE ESTADO
+    // CONFIGURACIÓN E ICONOS VECTORIALES UNIFICADOS
     // =========================================================================
     const STORAGE_KEY = 'finanzapro_state_v1';
 
@@ -564,14 +705,38 @@ npx cap open ios</pre>
     };
 
     const CATEGORY_META = {
-      'Alimentación': { icon: '🍔', color: '#f97316' },
-      'Vivienda': { icon: '🏠', color: '#6366f1' },
-      'Transporte': { icon: '🚗', color: '#0ea5e9' },
-      'Servicios': { icon: '💡', color: '#eab308' },
-      'Salud': { icon: '⚕️', color: '#10b981' },
-      'Entretenimiento': { icon: '🎬', color: '#ec4899' },
-      'Ingresos': { icon: '💼', color: '#22c55e' },
-      'Otros': { icon: '📦', color: '#64748b' }
+      'Vivienda': {
+        icon: '<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1V9.5z"/></svg>',
+        color: '#00E676'
+      },
+      'Alimentación': {
+        icon: '<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>',
+        color: '#00C853'
+      },
+      'Transporte': {
+        icon: '<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a1 1 0 0 0-.8-.4H5.24a2 2 0 0 0-1.8 1.1l-.8 1.63A6 6 0 0 0 2 12.42V16h2"/><circle cx="6.5" cy="16.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/></svg>',
+        color: '#10B981'
+      },
+      'Servicios': {
+        icon: '<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>',
+        color: '#34D399'
+      },
+      'Salud': {
+        icon: '<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>',
+        color: '#059669'
+      },
+      'Entretenimiento': {
+        icon: '<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>',
+        color: '#6EE7B7'
+      },
+      'Ingresos': {
+        icon: '<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>',
+        color: '#00E676'
+      },
+      'Otros': {
+        icon: '<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>',
+        color: '#52525B'
+      }
     };
 
     const INITIAL_TRANSACTIONS = [
@@ -604,7 +769,7 @@ npx cap open ios</pre>
       selectedMonth: '2026-10',
       activeTab: 'dashboard',
       platformMode: 'web',
-      darkMode: false,
+      darkMode: true,
       formType: 'expense',
       transactions: [],
       budgets: {}
@@ -625,11 +790,11 @@ npx cap open ios</pre>
             ? parsed.budgets
             : JSON.parse(JSON.stringify(INITIAL_BUDGETS));
           state.currency = parsed.currency || 'PEN';
-          state.darkMode = Boolean(parsed.darkMode);
+          state.darkMode = typeof parsed.darkModeV2 === 'boolean' ? parsed.darkModeV2 : true;
           return;
         }
       } catch (err) {
-        // Ignorar errores de acceso a localStorage en iframes restringidos
+        // Ignorar errores en iframes restringidos
       }
       state.transactions = JSON.parse(JSON.stringify(INITIAL_TRANSACTIONS));
       state.budgets = JSON.parse(JSON.stringify(INITIAL_BUDGETS));
@@ -641,16 +806,14 @@ npx cap open ios</pre>
           transactions: state.transactions,
           budgets: state.budgets,
           currency: state.currency,
-          darkMode: state.darkMode
+          darkMode: state.darkMode,
+          darkModeV2: state.darkMode
         }));
       } catch (err) {
         // Ignorar errores en entorno aislado
       }
     }
 
-    // =========================================================================
-    // UTILIDADES DE FORMATO Y FILTRADO
-    // =========================================================================
     function formatMoney(amountInPen) {
       const cfg = CURRENCY_CONFIG[state.currency] || CURRENCY_CONFIG.PEN;
       const converted = Number(amountInPen || 0) * cfg.rate;
@@ -705,9 +868,9 @@ npx cap open ios</pre>
       };
       Object.keys(webBtns).forEach(key => {
         if (key === tabName) {
-          webBtns[key].className = 'px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center gap-2 bg-indigo-600 text-white shadow-sm';
+          webBtns[key].className = 'px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center gap-2 bg-[#00E676] text-black shadow-sm';
         } else {
-          webBtns[key].className = 'px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:bg-slate-200/60 dark:hover:bg-slate-800';
+          webBtns[key].className = 'px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center gap-2 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200/60 dark:hover:bg-zinc-900';
         }
       });
 
@@ -719,9 +882,9 @@ npx cap open ios</pre>
       };
       Object.keys(iosBtns).forEach(key => {
         if (key === tabName) {
-          iosBtns[key].className = 'flex flex-col items-center py-1 text-indigo-600 dark:text-indigo-400';
+          iosBtns[key].className = 'flex flex-col items-center py-1 text-[#00ad58] dark:text-[#00E676]';
         } else {
-          iosBtns[key].className = 'flex flex-col items-center py-1 text-slate-500 dark:text-slate-400';
+          iosBtns[key].className = 'flex flex-col items-center py-1 text-zinc-500 dark:text-zinc-400';
         }
       });
 
@@ -751,21 +914,21 @@ npx cap open ios</pre>
         kpiGrid.className = 'grid grid-cols-2 gap-3';
         chartsGrid.className = 'grid grid-cols-1 gap-4';
         bottomGrid.className = 'grid grid-cols-1 gap-4';
-        btnIos.className = 'px-2.5 py-1 rounded-lg text-xs font-semibold transition-all bg-white dark:bg-slate-900 text-indigo-600 dark:text-indigo-400 shadow-sm';
-        btnWeb.className = 'px-2.5 py-1 rounded-lg text-xs font-semibold transition-all text-slate-600 dark:text-slate-400 hover:text-slate-900';
-        showToast('Vista iPhone App Store activada');
+        btnIos.className = 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold transition-all bg-white dark:bg-zinc-800 text-zinc-900 dark:text-[#00E676] shadow-sm';
+        btnWeb.className = 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold transition-all text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200';
+        showToast('Vista iPhone activada');
       } else {
         viewport.className = 'max-w-7xl mx-auto px-4 sm:px-6 py-5 transition-all duration-300';
         iosStatus.classList.add('hidden');
         webNav.classList.remove('hidden');
         iosNav.classList.add('hidden');
-        document.getElementById('mainScrollArea').className = 'space-y-6';
+        document.getElementById('mainScrollArea').className = 'space-y-5';
         kpiGrid.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4';
-        chartsGrid.className = 'grid grid-cols-1 lg:grid-cols-2 gap-5';
-        bottomGrid.className = 'grid grid-cols-1 lg:grid-cols-3 gap-5';
-        btnWeb.className = 'px-2.5 py-1 rounded-lg text-xs font-semibold transition-all bg-white dark:bg-slate-900 text-indigo-600 dark:text-indigo-400 shadow-sm';
-        btnIos.className = 'px-2.5 py-1 rounded-lg text-xs font-semibold transition-all text-slate-600 dark:text-slate-400 hover:text-slate-900';
-        showToast('Vista Panel Web activada');
+        chartsGrid.className = 'grid grid-cols-1 lg:grid-cols-2 gap-4';
+        bottomGrid.className = 'grid grid-cols-1 lg:grid-cols-3 gap-4';
+        btnWeb.className = 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold transition-all bg-white dark:bg-zinc-800 text-zinc-900 dark:text-[#00E676] shadow-sm';
+        btnIos.className = 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold transition-all text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200';
+        showToast('Vista Web activada');
       }
       setTimeout(() => renderCharts(), 60);
     }
@@ -782,10 +945,10 @@ npx cap open ios</pre>
       const icon = document.getElementById('themeIcon');
       if (state.darkMode) {
         root.classList.add('dark');
-        icon.textContent = '☀️';
+        icon.innerHTML = '<svg class="w-4 h-4 text-[#00E676]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
       } else {
         root.classList.remove('dark');
-        icon.textContent = '🌙';
+        icon.innerHTML = '<svg class="w-4 h-4 text-zinc-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
       }
     }
 
@@ -805,7 +968,7 @@ npx cap open ios</pre>
       state.currency = val;
       saveState();
       renderAll();
-      showToast(`Moneda cambiada a ${CURRENCY_CONFIG[val].name}`);
+      showToast(`Moneda: ${CURRENCY_CONFIG[val].name}`);
     }
 
     // =========================================================================
@@ -841,16 +1004,16 @@ npx cap open ios</pre>
       const bar = document.getElementById('kpiBudgetBar');
       if (budgetPct >= 100) {
         badge.textContent = 'Excedido';
-        badge.className = 'text-[11px] font-semibold px-2 py-0.5 rounded-full bg-rose-50 text-rose-700 dark:bg-rose-950 dark:text-rose-300';
-        bar.className = 'h-full bg-rose-600 transition-all duration-300';
+        badge.className = 'text-[10px] font-semibold px-2 py-0.5 rounded-md bg-rose-500/15 text-rose-500';
+        bar.className = 'h-full bg-rose-500 transition-all duration-300';
       } else if (budgetPct >= 80) {
         badge.textContent = 'Alerta 80%+';
-        badge.className = 'text-[11px] font-semibold px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 dark:bg-amber-950 dark:text-amber-300';
+        badge.className = 'text-[10px] font-semibold px-2 py-0.5 rounded-md bg-amber-500/15 text-amber-500';
         bar.className = 'h-full bg-amber-500 transition-all duration-300';
       } else {
-        badge.textContent = 'Saludable';
-        badge.className = 'text-[11px] font-semibold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300';
-        bar.className = 'h-full bg-indigo-600 transition-all duration-300';
+        badge.textContent = 'En rango';
+        badge.className = 'text-[10px] font-semibold px-2 py-0.5 rounded-md bg-[#00E676]/15 text-[#00ad58] dark:text-[#00E676]';
+        bar.className = 'h-full bg-[#00E676] transition-all duration-300';
       }
 
       renderRecentTransactions(monthTx.slice(0, 5));
@@ -863,7 +1026,7 @@ npx cap open ios</pre>
     function renderRecentTransactions(list) {
       const container = document.getElementById('recentTransactionsList');
       if (list.length === 0) {
-        container.innerHTML = `<p class="text-xs text-slate-400 py-6 text-center">No hay movimientos en este mes. ¡Registra el primero!</p>`;
+        container.innerHTML = `<p class="text-xs text-zinc-400 py-6 text-center">No hay movimientos registrados. Usa "+ Registrar" para agregar el primero.</p>`;
         return;
       }
       container.innerHTML = list.map(item => {
@@ -872,19 +1035,29 @@ npx cap open ios</pre>
         return `
           <div class="py-3 flex items-center justify-between gap-3">
             <div class="flex items-center gap-3 min-w-0">
-              <div class="w-9 h-9 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-base shrink-0">
+              <div class="w-9 h-9 rounded-xl bg-[#00E676]/10 text-[#00ad58] dark:text-[#00E676] border border-[#00E676]/20 flex items-center justify-center shrink-0">
                 ${meta.icon}
               </div>
               <div class="min-w-0">
                 <p class="text-xs font-semibold truncate">${escapeHtml(item.title)}</p>
-                <p class="text-[11px] text-slate-500 dark:text-slate-400">${escapeHtml(item.category)} • ${escapeHtml(item.method)} • ${escapeHtml(item.date)}</p>
+                <p class="text-[11px] text-zinc-500 dark:text-zinc-400">${escapeHtml(item.category)} · ${escapeHtml(item.method)} · ${escapeHtml(item.date)}</p>
               </div>
             </div>
-            <div class="text-right shrink-0">
-              <p class="text-xs font-bold ${isIncome ? 'text-emerald-600 dark:text-emerald-400' : 'text-rose-600 dark:text-rose-400'}">
-                ${isIncome ? '+' : '-'}${formatMoney(item.amount)}
-              </p>
-              ${item.recurring ? '<span class="text-[10px] text-indigo-600 dark:text-indigo-400 font-medium">↻ Mensual</span>' : ''}
+            <div class="flex items-center gap-2.5 shrink-0">
+              <div class="text-right">
+                <p class="text-xs font-bold ${isIncome ? 'text-[#00ad58] dark:text-[#00E676]' : 'text-zinc-900 dark:text-zinc-100'}">
+                  ${isIncome ? '+' : '-'}${formatMoney(item.amount)}
+                </p>
+                ${item.recurring ? '<span class="text-[10px] text-zinc-400 font-medium">Mensual</span>' : ''}
+              </div>
+              <div class="flex items-center gap-1">
+                <button type="button" onclick="editTransaction('${item.id}')" aria-label="Editar" class="p-1.5 rounded-lg bg-zinc-100 dark:bg-zinc-800 hover:border-[#00E676]/50 border border-transparent text-zinc-600 dark:text-zinc-300 transition">
+                  <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                </button>
+                <button type="button" onclick="deleteTransaction('${item.id}')" aria-label="Eliminar" class="p-1.5 rounded-lg bg-zinc-100 dark:bg-zinc-800 hover:text-rose-500 text-zinc-500 dark:text-zinc-400 transition">
+                  <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+              </div>
             </div>
           </div>
         `;
@@ -895,7 +1068,7 @@ npx cap open ios</pre>
       const container = document.getElementById('paymentMethodsBreakdown');
       const totalExp = expenses.reduce((a, b) => a + Number(b.amount), 0);
       if (totalExp === 0) {
-        container.innerHTML = `<p class="text-xs text-slate-400 py-4">Sin gastos registrados en el periodo.</p>`;
+        container.innerHTML = `<p class="text-xs text-zinc-400 py-4">Sin gastos en este periodo.</p>`;
         return;
       }
       const counts = {};
@@ -906,13 +1079,13 @@ npx cap open ios</pre>
       container.innerHTML = sorted.map(([method, amt]) => {
         const pct = Math.round((amt / totalExp) * 100);
         return `
-          <div class="space-y-1">
+          <div class="space-y-1.5">
             <div class="flex items-center justify-between text-xs">
-              <span class="font-medium text-slate-700 dark:text-slate-300">${escapeHtml(method)}</span>
+              <span class="font-medium text-zinc-700 dark:text-zinc-300">${escapeHtml(method)}</span>
               <span class="font-semibold">${formatMoney(amt)} (${pct}%)</span>
             </div>
-            <div class="w-full h-1.5 rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
-              <div class="h-full bg-indigo-500 rounded-full" style="width: ${pct}%"></div>
+            <div class="w-full h-1.5 rounded-full bg-zinc-100 dark:bg-zinc-800 overflow-hidden">
+              <div class="h-full bg-[#00E676] rounded-full" style="width: ${pct}%"></div>
             </div>
           </div>
         `;
@@ -940,7 +1113,7 @@ npx cap open ios</pre>
 
       const container = document.getElementById('fullTransactionsList');
       if (filtered.length === 0) {
-        container.innerHTML = `<div class="py-10 text-center text-xs text-slate-400">No se encontraron movimientos con los filtros actuales.</div>`;
+        container.innerHTML = `<div class="py-10 text-center text-xs text-zinc-400">No se encontraron movimientos con los filtros actuales.</div>`;
         return;
       }
 
@@ -948,32 +1121,32 @@ npx cap open ios</pre>
         const meta = CATEGORY_META[item.category] || CATEGORY_META['Otros'];
         const isIncome = item.type === 'income';
         return `
-          <div class="py-3.5 flex flex-wrap items-center justify-between gap-3 hover:bg-slate-50/70 dark:hover:bg-slate-800/40 px-2 rounded-xl transition">
+          <div class="py-3.5 flex flex-wrap items-center justify-between gap-3 hover:bg-zinc-50/70 dark:hover:bg-zinc-800/30 px-2 rounded-xl transition">
             <div class="flex items-center gap-3 min-w-0">
-              <div class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-lg shrink-0">
+              <div class="w-9 h-9 rounded-xl bg-[#00E676]/10 text-[#00ad58] dark:text-[#00E676] border border-[#00E676]/20 flex items-center justify-center shrink-0">
                 ${meta.icon}
               </div>
               <div class="min-w-0">
                 <div class="flex items-center gap-2">
                   <p class="text-xs sm:text-sm font-semibold truncate">${escapeHtml(item.title)}</p>
-                  ${item.recurring ? '<span class="text-[10px] px-1.5 py-0.5 rounded bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-300 font-semibold">Recurrente</span>' : ''}
+                  ${item.recurring ? '<span class="text-[10px] px-1.5 py-0.5 rounded bg-[#00E676]/10 text-[#00ad58] dark:text-[#00E676] font-semibold">Fijo</span>' : ''}
                 </div>
-                <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">
-                  ${escapeHtml(item.category)} • ${escapeHtml(item.method)} • ${escapeHtml(item.date)}
+                <p class="text-[11px] text-zinc-500 dark:text-zinc-400 mt-0.5">
+                  ${escapeHtml(item.category)} · ${escapeHtml(item.method)} · ${escapeHtml(item.date)}
                 </p>
               </div>
             </div>
 
             <div class="flex items-center gap-3 ml-auto">
-              <span class="text-xs sm:text-sm font-bold ${isIncome ? 'text-emerald-600 dark:text-emerald-400' : 'text-rose-600 dark:text-rose-400'}">
+              <span class="text-xs sm:text-sm font-bold ${isIncome ? 'text-[#00ad58] dark:text-[#00E676]' : 'text-zinc-900 dark:text-zinc-100'}">
                 ${isIncome ? '+' : '-'}${formatMoney(item.amount)}
               </span>
               <div class="flex items-center gap-1">
-                <button type="button" onclick="editTransaction('${item.id}')" class="px-2 py-1 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800 hover:bg-indigo-50 dark:hover:bg-indigo-950 text-slate-700 dark:text-slate-300">
+                <button type="button" onclick="editTransaction('${item.id}')" class="px-2.5 py-1 rounded-lg text-xs font-medium bg-zinc-100 dark:bg-zinc-800 hover:border-[#00E676]/50 border border-transparent text-zinc-700 dark:text-zinc-300">
                   Editar
                 </button>
-                <button type="button" onclick="deleteTransaction('${item.id}')" class="px-2 py-1 rounded-lg text-xs font-medium bg-rose-50 dark:bg-rose-950/60 hover:bg-rose-100 text-rose-600 dark:text-rose-300">
-                  Eliminar
+                <button type="button" onclick="deleteTransaction('${item.id}')" class="px-2.5 py-1 rounded-lg text-xs font-medium bg-zinc-100 dark:bg-zinc-800 hover:text-rose-500 text-zinc-500 dark:text-zinc-400">
+                  Borrar
                 </button>
               </div>
             </div>
@@ -985,7 +1158,7 @@ npx cap open ios</pre>
     function renderBudgetsSection(expenses) {
       const container = document.getElementById('budgetsGrid');
       const totalBudget = Object.values(state.budgets).reduce((a, b) => a + Number(b), 0);
-      document.getElementById('totalBudgetSummary').textContent = `Presupuesto Mensual Total: ${formatMoney(totalBudget)}`;
+      document.getElementById('totalBudgetSummary').textContent = `Presupuesto Total: ${formatMoney(totalBudget)}`;
 
       const spentByCat = {};
       expenses.forEach(e => {
@@ -998,31 +1171,33 @@ npx cap open ios</pre>
         const spent = Number(spentByCat[cat] || 0);
         const pct = limit > 0 ? Math.round((spent / limit) * 100) : 0;
         const meta = CATEGORY_META[cat] || CATEGORY_META['Otros'];
-        const barColor = pct >= 100 ? 'bg-rose-600' : (pct >= 80 ? 'bg-amber-500' : 'bg-indigo-600');
-        const statusText = pct >= 100 ? 'Tope superado' : (pct >= 80 ? 'Cerca del límite' : 'Disponible');
+        const barColor = pct >= 100 ? 'bg-rose-500' : (pct >= 80 ? 'bg-amber-500' : 'bg-[#00E676]');
+        const statusText = pct >= 100 ? 'Excedido' : (pct >= 80 ? 'Cerca del límite' : 'En rango');
 
         return `
-          <div class="p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-800/40 space-y-3">
+          <div class="p-4 rounded-2xl border border-zinc-200/80 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-950/60 space-y-3">
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-2.5">
-                <span class="text-lg">${meta.icon}</span>
+                <div class="w-8 h-8 rounded-lg bg-[#00E676]/10 text-[#00ad58] dark:text-[#00E676] border border-[#00E676]/20 flex items-center justify-center">
+                  ${meta.icon}
+                </div>
                 <div>
                   <h3 class="text-xs sm:text-sm font-bold">${escapeHtml(cat)}</h3>
-                  <span class="text-[11px] text-slate-500 dark:text-slate-400">${statusText} (${pct}%)</span>
+                  <span class="text-[11px] text-zinc-500 dark:text-zinc-400">${statusText} (${pct}%)</span>
                 </div>
               </div>
-              <button type="button" onclick="openBudgetModal('${cat}')" class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-indigo-500 transition">
-                ✏️ Editar Tope
+              <button type="button" onclick="openBudgetModal('${cat}')" class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:border-[#00E676]/50 transition">
+                Editar tope
               </button>
             </div>
 
-            <div class="w-full h-2.5 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
+            <div class="w-full h-1.5 rounded-full bg-zinc-200 dark:bg-zinc-800 overflow-hidden">
               <div class="h-full ${barColor} transition-all duration-300" style="width: ${Math.min(100, pct)}%"></div>
             </div>
 
-            <div class="flex items-center justify-between text-xs text-slate-600 dark:text-slate-300">
-              <span>Gastado: <strong>${formatMoney(spent)}</strong></span>
-              <span>Tope: <strong>${formatMoney(limit)}</strong></span>
+            <div class="flex items-center justify-between text-xs text-zinc-600 dark:text-zinc-400">
+              <span>Gastado: <strong class="text-zinc-900 dark:text-zinc-100">${formatMoney(spent)}</strong></span>
+              <span>Límite: <strong class="text-zinc-900 dark:text-zinc-100">${formatMoney(limit)}</strong></span>
             </div>
           </div>
         `;
@@ -1044,8 +1219,8 @@ npx cap open ios</pre>
       const budgetData = catLabels.map(c => Number(((state.budgets[c] || 0) * rate).toFixed(2)));
       const bgColors = catLabels.map(c => (CATEGORY_META[c] || CATEGORY_META['Otros']).color);
 
-      const textColor = state.darkMode ? '#cbd5e1' : '#475569';
-      const gridColor = state.darkMode ? 'rgba(148, 163, 184, 0.12)' : 'rgba(148, 163, 184, 0.2)';
+      const textColor = state.darkMode ? '#a1a1aa' : '#52525b';
+      const gridColor = state.darkMode ? 'rgba(255, 255, 255, 0.06)' : 'rgba(0, 0, 0, 0.06)';
 
       const ctx1 = document.getElementById('categoryChart').getContext('2d');
       if (categoryChartInstance) {
@@ -1057,18 +1232,18 @@ npx cap open ios</pre>
           labels: catLabels,
           datasets: [{
             data: spentData.some(v => v > 0) ? spentData : [1],
-            backgroundColor: spentData.some(v => v > 0) ? bgColors : ['#94a3b8'],
+            backgroundColor: spentData.some(v => v > 0) ? bgColors : ['#27272a'],
             borderWidth: 0
           }]
         },
         options: {
           responsive: true,
           maintainAspectRatio: false,
-          cutout: '66%',
+          cutout: '68%',
           plugins: {
             legend: {
               position: 'right',
-              labels: { color: textColor, font: { size: 11, family: 'Inter' }, boxWidth: 12 }
+              labels: { color: textColor, font: { size: 11, family: 'Inter' }, boxWidth: 10 }
             }
           }
         }
@@ -1086,13 +1261,13 @@ npx cap open ios</pre>
             {
               label: 'Gasto Real',
               data: spentData,
-              backgroundColor: '#6366f1',
+              backgroundColor: '#00E676',
               borderRadius: 6
             },
             {
               label: 'Tope Mensual',
               data: budgetData,
-              backgroundColor: state.darkMode ? '#334155' : '#e2e8f0',
+              backgroundColor: state.darkMode ? '#27272a' : '#e4e4e7',
               borderRadius: 6
             }
           ]
@@ -1112,7 +1287,7 @@ npx cap open ios</pre>
           },
           plugins: {
             legend: {
-              labels: { color: textColor, font: { size: 11, family: 'Inter' }, boxWidth: 12 }
+              labels: { color: textColor, font: { size: 11, family: 'Inter' }, boxWidth: 10 }
             }
           }
         }
@@ -1129,12 +1304,12 @@ npx cap open ios</pre>
       const catSelect = document.getElementById('txCategory');
 
       if (type === 'expense') {
-        btnExp.className = 'py-2 rounded-lg text-xs font-bold transition bg-rose-600 text-white shadow-sm';
-        btnInc.className = 'py-2 rounded-lg text-xs font-bold transition text-slate-600 dark:text-slate-300';
+        btnExp.className = 'py-2 rounded-lg text-xs font-bold transition bg-zinc-900 dark:bg-zinc-800 text-white shadow-sm';
+        btnInc.className = 'py-2 rounded-lg text-xs font-bold transition text-zinc-500 dark:text-zinc-400';
         if (catSelect.value === 'Ingresos') catSelect.value = 'Alimentación';
       } else {
-        btnInc.className = 'py-2 rounded-lg text-xs font-bold transition bg-emerald-600 text-white shadow-sm';
-        btnExp.className = 'py-2 rounded-lg text-xs font-bold transition text-slate-600 dark:text-slate-300';
+        btnInc.className = 'py-2 rounded-lg text-xs font-bold transition bg-[#00E676] text-black shadow-sm';
+        btnExp.className = 'py-2 rounded-lg text-xs font-bold transition text-zinc-500 dark:text-zinc-400';
         catSelect.value = 'Ingresos';
       }
     }
@@ -1191,7 +1366,7 @@ npx cap open ios</pre>
       const recurring = document.getElementById('txRecurring').checked;
 
       if (!title || isNaN(rawAmount) || rawAmount <= 0 || !date) {
-        showToast('Completa todos los campos correctamente');
+        showToast('Completa todos los campos');
         return;
       }
 
@@ -1216,7 +1391,7 @@ npx cap open ios</pre>
           recurring
         };
         state.transactions.unshift(newTx);
-        showToast('Movimiento registrado con éxito');
+        showToast('Movimiento registrado');
       }
 
       saveState();
@@ -1284,9 +1459,6 @@ npx cap open ios</pre>
       showToast('Datos de demostración restaurados');
     }
 
-    // =========================================================================
-    // EXPORTACIÓN Y PORTAPAPELES
-    // =========================================================================
     function exportToCSV() {
       const rows = [
         ['ID', 'Fecha', 'Concepto', 'Tipo', 'Categoria', 'MetodoPago', 'Monto_PEN', 'Recurrente']
@@ -1346,9 +1518,9 @@ npx cap open ios</pre>
       textarea.select();
       try {
         document.execCommand('copy');
-        showToast('Comandos copiados al portapapeles');
+        showToast('Comandos copiados');
       } catch (err) {
-        showToast('No se pudo copiar automáticamente');
+        showToast('No se pudo copiar');
       }
       document.body.removeChild(textarea);
     }
@@ -1362,8 +1534,93 @@ npx cap open ios</pre>
         .replace(/'/g, '&#039;');
     }
 
-    // Exportar funciones al ámbito global para handlers inline
+    function openQuickIncomeEdit() {
+      const monthTx = getMonthFilteredTransactions();
+      const firstIncome = monthTx.find(t => t.type === 'income');
+      if (firstIncome) {
+        editTransaction(firstIncome.id);
+      } else {
+        openTransactionModal('income');
+      }
+    }
+
+    function clearAllTransactions() {
+      state.transactions = [];
+      saveState();
+      renderAll();
+      showToast('Ejemplos eliminados');
+    }
+
+    function openTotalBudgetModal() {
+      const rate = (CURRENCY_CONFIG[state.currency] || CURRENCY_CONFIG.PEN).rate;
+      const currentTotalPen = Object.values(state.budgets).reduce((a, b) => a + Number(b), 0);
+      const currentInCurrency = Math.round(currentTotalPen * rate);
+      document.getElementById('totalBudgetInput').value = String(currentInCurrency);
+      const modal = document.getElementById('totalBudgetModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeTotalBudgetModal() {
+      const modal = document.getElementById('totalBudgetModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function saveTotalBudget(event) {
+      event.preventDefault();
+      const rawVal = parseFloat(document.getElementById('totalBudgetInput').value);
+      if (isNaN(rawVal) || rawVal <= 0) return;
+
+      const rate = (CURRENCY_CONFIG[state.currency] || CURRENCY_CONFIG.PEN).rate;
+      const targetTotalPen = Math.round(rawVal / rate);
+      const cats = Object.keys(state.budgets);
+      const currentTotalPen = Object.values(state.budgets).reduce((a, b) => a + Number(b), 0);
+
+      if (currentTotalPen > 0) {
+        let runningSum = 0;
+        cats.forEach((cat, idx) => {
+          if (idx === cats.length - 1) {
+            state.budgets[cat] = Math.max(1, targetTotalPen - runningSum);
+          } else {
+            const scaled = Math.max(1, Math.round((Number(state.budgets[cat]) / currentTotalPen) * targetTotalPen));
+            state.budgets[cat] = scaled;
+            runningSum += scaled;
+          }
+        });
+      } else {
+        const perCat = Math.floor(targetTotalPen / cats.length);
+        cats.forEach((cat, idx) => {
+          state.budgets[cat] = idx === cats.length - 1 ? (targetTotalPen - perCat * (cats.length - 1)) : perCat;
+        });
+      }
+
+      saveState();
+      closeTotalBudgetModal();
+      renderAll();
+      showToast(`Presupuesto actualizado a ${formatMoney(targetTotalPen)}`);
+    }
+
+    function openTutorialModal() {
+      const modal = document.getElementById('tutorialModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeTutorialModal() {
+      const modal = document.getElementById('tutorialModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
     Object.assign(window, {
+      openTotalBudgetModal,
+      closeTotalBudgetModal,
+      saveTotalBudget,
+      openTutorialModal,
+      closeTutorialModal,
+      openQuickIncomeEdit,
+      clearAllTransactions,
       setPlatformMode,
       handleMonthChange,
       handleCurrencyChange,
@@ -1388,6 +1645,26 @@ npx cap open ios</pre>
     });
 
     window.addEventListener('DOMContentLoaded', () => {
+      try {
+        if ('serviceWorker' in navigator && navigator.serviceWorker && typeof navigator.serviceWorker.getRegistrations === 'function') {
+          navigator.serviceWorker.getRegistrations()
+            .then(regs => regs.forEach(r => {
+              if (r && typeof r.unregister === 'function') {
+                r.unregister().catch(() => {});
+              }
+            }))
+            .catch(() => {});
+        }
+        if ('caches' in window && window.caches && typeof window.caches.keys === 'function') {
+          window.caches.keys()
+            .then(keys => keys.forEach(k => {
+              window.caches.delete(k).catch(() => {});
+            }))
+            .catch(() => {});
+        }
+      } catch (e) {
+        // Ignorar restricciones de ServiceWorker/Cache en iframes aislados
+      }
       loadState();
       document.getElementById('currencySelect').value = state.currency;
       applyTheme();
